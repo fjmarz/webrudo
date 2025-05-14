@@ -11,26 +11,29 @@ import Header from './Header';
 import Footer from './Footer';
 import { useI18n } from '../lib/i18n/context';
 
-const TestimonialCard = ({ name, role, quote }: {
-  name: string;
-  role: string;
-  quote: string;
-}) => (
-  <motion.div 
-    whileHover={{ y: -5 }}
-    className="relative p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#8A2BE2]/30 transition-colors"
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2]/10 to-[#4169E1]/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity" />
-    <div className="relative">
-      <Star className="w-6 h-6 text-[#8A2BE2] mb-4" />
-      <p className="text-lg mb-4 text-gray-300">{quote}</p>
-      <div>
-        <p className="font-bold">{name}</p>
-        <p className="text-sm text-gray-400">{role}</p>
+const TestimonialCard = ({ quoteKey, nameKey, roleKey }: {
+  quoteKey: string;
+  nameKey: string;
+  roleKey: string;
+}) => {
+  const { t } = useI18n();
+  return (
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="relative p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#8A2BE2]/30 transition-colors"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2]/10 to-[#4169E1]/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity" />
+      <div className="relative">
+        <Star className="w-6 h-6 text-[#8A2BE2] mb-4" />
+        <p className="text-lg mb-4 text-gray-300">{t(quoteKey)}</p>
+        <div>
+          <p className="font-bold">{t(nameKey)}</p>
+          <p className="text-sm text-gray-400">{t(roleKey)}</p>
+        </div>
       </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const ComparisonRow = ({ problem, solution, icon: Icon, problemSubtext, solutionSubtext }: {
   problem: string;
@@ -237,19 +240,19 @@ const LandingPage = () => {
             
             <div className="grid md:grid-cols-3 gap-6">
               <TestimonialCard
-                name="Carlos Rodriguez"
-                role="Head Coach, CrossFit Madrid"
-                quote="RUDO replaced Google Sheets and saved me 6 hours a week."
+                quoteKey="testimonial-1-quote"
+                nameKey="testimonial-1-name"
+                roleKey="testimonial-1-role"
               />
               <TestimonialCard
-                name="Sarah Thompson"
-                role="Owner, CrossFit Elite"
-                quote="Finally, software that understands how CrossFit coaches actually work."
+                quoteKey="testimonial-2-quote"
+                nameKey="testimonial-2-name"
+                roleKey="testimonial-2-role"
               />
               <TestimonialCard
-                name="Juan Martinez"
-                role="Programming Director, CrossFit Buenos Aires"
-                quote="The athlete feedback loop is a game-changer for remote coaching."
+                quoteKey="testimonial-3-quote"
+                nameKey="testimonial-3-name"
+                roleKey="testimonial-3-role"
               />
             </div>
           </div>
