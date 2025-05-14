@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Modal from './Modal';
 import WaitlistForm from './WaitlistForm';
+import LanguageToggle from './LanguageToggle';
+import { useI18n } from '../lib/i18n/context';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,14 +57,15 @@ const Header = () => {
                 onClick={(e) => handleNavClick(e, 'why-coaches')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
-                How it Works
+                {t('how-it-works')}
               </button>
               <button
                 onClick={(e) => handleNavClick(e, 'faq')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
-                FAQ
+                {t('faq')}
               </button>
+              <LanguageToggle />
             </nav>
 
             {/* CTA Button */}
@@ -69,7 +73,7 @@ const Header = () => {
               onClick={() => setIsModalOpen(true)}
               className="bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
-              Join the Beta
+              {t('join-beta')}
             </button>
           </div>
         </div>

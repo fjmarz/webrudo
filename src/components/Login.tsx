@@ -5,6 +5,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { ArrowLeft, Mail } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { useI18n } from '../lib/i18n/context';
+import LanguageToggle from './LanguageToggle';
 
 const loginSchema = z.object({
   email: z.string().email('Por favor ingresa un email válido'),
@@ -14,6 +16,7 @@ const loginSchema = z.object({
 type LoginFormData = z.infer<typeof loginSchema>;
 
 const Login = () => {
+  const { t } = useI18n();
   const {
     register,
     handleSubmit,
@@ -59,13 +62,16 @@ const Login = () => {
     <div className="min-h-screen bg-[#0A0A0A] text-white flex">
       {/* Left Panel - Login Form */}
       <div className="w-full lg:w-1/2 p-8 flex flex-col">
-        <Link
-          to="/"
-          className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-12"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to home
-        </Link>
+        <div className="flex items-center justify-between mb-12">
+          <Link
+            to="/"
+            className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            {t('back-to-home')}
+          </Link>
+          <LanguageToggle />
+        </div>
 
         <div className="flex items-center gap-3 mb-12">
           <div className="text-2xl font-black tracking-tighter bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] bg-clip-text text-transparent">
@@ -74,9 +80,9 @@ const Login = () => {
         </div>
 
         <div className="max-w-md w-full mx-auto flex-1 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold mb-2">Welcome back</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('welcome-back')}</h1>
           <p className="text-gray-400 mb-8">
-            Sign in to access your account
+            {t('sign-in-to-access')}
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -89,7 +95,7 @@ const Login = () => {
             <div>
               <input
                 type="email"
-                placeholder="Email"
+                placeholder={t('email')}
                 {...register('email')}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] focus:border-transparent text-white placeholder-gray-400"
               />
@@ -101,7 +107,7 @@ const Login = () => {
             <div>
               <input
                 type="password"
-                placeholder="Password"
+                placeholder={t('password')}
                 {...register('password')}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] focus:border-transparent text-white placeholder-gray-400"
               />
@@ -113,10 +119,10 @@ const Login = () => {
             <div className="flex items-center justify-between text-sm">
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2 rounded border-white/10 bg-white/5" />
-                Remember me
+                {t('remember-me')}
               </label>
               <a href="#" className="text-[#8A2BE2] hover:text-[#4169E1] transition-colors">
-                Forgot password?
+                {t('forgot-password')}
               </a>
             </div>
 
@@ -125,7 +131,7 @@ const Login = () => {
               disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
             >
-              {isSubmitting ? 'Signing in...' : 'Sign in'}
+              {isSubmitting ? t('signing-in') : t('sign-in')}
             </button>
 
             <div className="relative my-6">
@@ -133,7 +139,7 @@ const Login = () => {
                 <div className="w-full border-t border-white/10"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-[#0A0A0A] text-gray-400">Or continue with</span>
+                <span className="px-2 bg-[#0A0A0A] text-gray-400">{t('or-continue-with')}</span>
               </div>
             </div>
 
@@ -160,14 +166,14 @@ const Login = () => {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                 />
               </svg>
-              Continue with Google
+              {t('continue-with-google')}
             </button>
           </form>
 
           <p className="text-center text-gray-400 text-sm mt-6">
-            Don't have an account?{' '}
+            {t('dont-have-account')}{' '}
             <Link to="/signup" className="text-[#8A2BE2] hover:text-[#4169E1] transition-colors">
-              Sign up
+              {t('sign-up')}
             </Link>
           </p>
         </div>
