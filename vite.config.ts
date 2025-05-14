@@ -7,7 +7,7 @@ export default defineConfig({
     react({
       babel: {
         plugins: [
-          ['babel-plugin-direct-import', { modules: ['@heroicons/react', 'lucide-react'] }],
+          ['babel-plugin-direct-import', { modules: ['lucide-react'] }],
         ],
       },
     }),
