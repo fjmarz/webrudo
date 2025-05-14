@@ -17,7 +17,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -51,13 +51,13 @@ const Header = () => {
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <button
-                onClick={(e) => handleNavClick(e as any, 'why-coaches')}
+                onClick={(e) => handleNavClick(e, 'why-coaches')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
                 How it Works
               </button>
               <button
-                onClick={(e) => handleNavClick(e as any, 'faq')}
+                onClick={(e) => handleNavClick(e, 'faq')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
                 FAQ
