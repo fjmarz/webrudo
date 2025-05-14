@@ -5,10 +5,12 @@ import Modal from './Modal';
 import WaitlistForm from './WaitlistForm';
 import LanguageToggle from './LanguageToggle';
 import { useI18n } from '../lib/i18n/context';
+import { Menu } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useI18n();
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const Header = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Account for header height
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -33,6 +35,7 @@ const Header = () => {
         behavior: 'smooth'
       });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -51,7 +54,7 @@ const Header = () => {
               <span className="text-2xl font-black tracking-tighter text-white">RUDO</span>
             </Link>
 
-            {/* Navigation */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <button
                 onClick={(e) => handleNavClick(e, 'why-coaches')}
@@ -68,21 +71,61 @@ const Header = () => {
               <LanguageToggle />
             </nav>
 
+            {/* Mobile Menu Button */}
+            <div className="flex items-center gap-4 md:hidden">
+              <LanguageToggle />
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
+
             {/* CTA Button */}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hidden md:block bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
               {t('join-beta')}
             </button>
           </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-white/10">
+              <nav className="flex flex-col gap-4">
+                <button
+                  onClick={(e) => handleNavClick(e, 'why-coaches')}
+                  className="text-sm text-gray-300 hover:text-white transition-colors text-left"
+                >
+                  {t('how-it-works')}
+                </button>
+                <button
+                  onClick={(e) => handleNavClick(e, 'faq')}
+                  className="text-sm text-gray-300 hover:text-white transition-colors text-left"
+                >
+                  {t('faq')}
+                </button>
+                <button 
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity text-center"
+                >
+                  {t('join-beta')}
+                </button>
+              </nav>
+            </div>
+          )}
         </div>
       </motion.header>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold mb-2">Join the RUDO Beta</h2>
-          <p className="text-gray-400">Be among the first to experience the future of CrossFit coaching</p>
+          <h2 className="text-2xl font-bold mb-2">{t('join-beta-title')}</h2>
+          <p className="text-gray-400">{t('join-beta-subtitle')}</p>
         </div>
         <WaitlistForm />
       </Modal>
