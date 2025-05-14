@@ -46,6 +46,29 @@ export const translations = {
     'ready-to-pro': 'Ready to program like a pro?',
     'shape-future': 'Join the coaches shaping the future of CrossFit training',
 
+    // Testimonials
+    'testimonial-1-quote': 'RUDO replaced Google Sheets and saved me 6 hours a week.',
+    'testimonial-1-name': 'Carlos Rodriguez',
+    'testimonial-1-role': 'Head Coach, CrossFit Madrid',
+    'testimonial-2-quote': 'Finally, software that understands how CrossFit coaches actually work.',
+    'testimonial-2-name': 'Sarah Thompson',
+    'testimonial-2-role': 'Owner, CrossFit Elite',
+    'testimonial-3-quote': 'The athlete feedback loop is a game-changer for remote coaching.',
+    'testimonial-3-name': 'Juan Martinez',
+    'testimonial-3-role': 'Programming Director, CrossFit Buenos Aires',
+
+    // FAQ
+    'faq-1-question': 'Can I use RUDO for both group and 1-on-1 clients?',
+    'faq-1-answer': 'Yes — assign programs to individuals, small groups, or your entire roster in one click.',
+    'faq-2-question': 'Do my athletes need to download anything?',
+    'faq-2-answer': 'Nope. They get instant access through a mobile-friendly web app — no installs, no friction.',
+    'faq-3-question': 'What makes RUDO different from other coaching platforms?',
+    'faq-3-answer': 'RUDO is purpose-built for CrossFit and HYROX coaches — not generic trainers. Every feature is designed around real-world programming, feedback, and athlete flow in high-performance functional training environments.',
+    'faq-4-question': 'Can I customize my own programming blocks?',
+    'faq-4-answer': 'Yes. Build, reuse, and edit your own templates — warm-ups, EMOMs, skills — and deploy them in seconds.',
+    'faq-5-question': "What's included in the beta?",
+    'faq-5-answer': 'Full access to all core features, direct access to the founding team, and lifetime perks for helping us shape the future of RUDO.',
+
     // Beta Form
     'join-beta-title': 'Join the RUDO Beta',
     'join-beta-subtitle': 'Be among the first to experience the future of CrossFit coaching',
@@ -103,6 +126,29 @@ export const translations = {
     'still-questions': '¿Aún tienes preguntas?',
     'ready-to-pro': '¿Listo para programar como un pro?',
     'shape-future': 'Únete a los entrenadores que están dando forma al futuro del entrenamiento CrossFit',
+
+    // Testimonials
+    'testimonial-1-quote': 'RUDO reemplazó Google Sheets y me ahorró 6 horas por semana.',
+    'testimonial-1-name': 'Carlos Rodriguez',
+    'testimonial-1-role': 'Head Coach, CrossFit Madrid',
+    'testimonial-2-quote': 'Por fin, un software que entiende cómo trabajan realmente los coaches de CrossFit.',
+    'testimonial-2-name': 'Sarah Thompson',
+    'testimonial-2-role': 'Dueña, CrossFit Elite',
+    'testimonial-3-quote': 'El feedback loop con los atletas es un game-changer para el coaching remoto.',
+    'testimonial-3-name': 'Juan Martinez',
+    'testimonial-3-role': 'Director de Programación, CrossFit Buenos Aires',
+
+    // FAQ
+    'faq-1-question': '¿Puedo usar RUDO tanto para grupos como para clientes 1-a-1?',
+    'faq-1-answer': 'Sí — asigna programas a individuos, grupos pequeños o todo tu roster con un solo clic.',
+    'faq-2-question': '¿Mis atletas necesitan descargar algo?',
+    'faq-2-answer': 'No. Obtienen acceso instantáneo a través de una web app optimizada para móviles — sin instalaciones, sin fricción.',
+    'faq-3-question': '¿Qué hace diferente a RUDO de otras plataformas de coaching?',
+    'faq-3-answer': 'RUDO está construido específicamente para coaches de CrossFit y HYROX — no para entrenadores genéricos. Cada característica está diseñada alrededor de la programación del mundo real, feedback y flujo de atletas en entornos de entrenamiento funcional de alto rendimiento.',
+    'faq-4-question': '¿Puedo personalizar mis propios bloques de programación?',
+    'faq-4-answer': 'Sí. Construye, reutiliza y edita tus propias plantillas — calentamientos, EMOMs, habilidades — y despliégalos en segundos.',
+    'faq-5-question': '¿Qué incluye la beta?',
+    'faq-5-answer': 'Acceso completo a todas las funciones principales, acceso directo al equipo fundador y beneficios de por vida por ayudarnos a dar forma al futuro de RUDO.',
 
     // Beta Form
     'join-beta-title': 'Únete a la Beta de RUDO',
