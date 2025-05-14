@@ -82,3 +82,5 @@ const Header = () => {
     </motion.header>
   );
 }
+
+export default Header
