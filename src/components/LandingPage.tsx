@@ -82,8 +82,9 @@ const ComparisonRow = ({ problem, solution, icon: Icon, problemSubtext, solution
   );
 };
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+const FAQItem = ({ questionKey, answerKey }: { questionKey: string; answerKey: string }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <motion.div 
@@ -98,7 +99,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         <span className="text-lg font-medium pr-8 group-hover:text-[#8A2BE2] transition-colors duration-200">
-          {question}
+          {t(questionKey)}
         </span>
         <motion.div
           initial={false}
@@ -134,7 +135,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
             }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-5 text-gray-400 leading-relaxed">{answer}</p>
+            <p className="px-6 pb-5 text-gray-400 leading-relaxed">{t(answerKey)}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -372,24 +373,24 @@ const LandingPage = () => {
             
             <div className="space-y-4">
               <FAQItem
-                question="Can I use RUDO for both group and 1-on-1 clients?"
-                answer="Yes — assign programs to individuals, small groups, or your entire roster in one click."
+                questionKey="faq-1-question"
+                answerKey="faq-1-answer"
               />
               <FAQItem
-                question="Do my athletes need to download anything?"
-                answer="Nope. They get instant access through a mobile-friendly web app — no installs, no friction."
+                questionKey="faq-2-question"
+                answerKey="faq-2-answer"
               />
               <FAQItem
-                question="What makes RUDO different from other coaching platforms?"
-                answer="RUDO is purpose-built for CrossFit and HYROX coaches — not generic trainers. Every feature is designed around real-world programming, feedback, and athlete flow in high-performance functional training environments."
+                questionKey="faq-3-question"
+                answerKey="faq-3-answer"
               />
               <FAQItem
-                question="Can I customize my own programming blocks?"
-                answer="Yes. Build, reuse, and edit your own templates — warm-ups, EMOMs, skills — and deploy them in seconds."
+                questionKey="faq-4-question"
+                answerKey="faq-4-answer"
               />
               <FAQItem
-                question="What's included in the beta?"
-                answer="Full access to all core features, direct access to the founding team, and lifetime perks for helping us shape the future of RUDO."
+                questionKey="faq-5-question"
+                answerKey="faq-5-answer"
               />
             </div>
           </div>
