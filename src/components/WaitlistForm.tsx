@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { useI18n } from '../lib/i18n/context';
 
 const waitlistSchema = z.object({
   email: z.string().email('Por favor ingresa un email válido'),
@@ -16,6 +17,7 @@ type WaitlistFormData = z.infer<typeof waitlistSchema>;
 const WaitlistForm = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const { t } = useI18n();
 
   const {
     register,
@@ -31,9 +33,6 @@ const WaitlistForm = () => {
       setSubmitStatus('loading');
       setErrorMessage('');
 
-      // Log the form data being submitted
-      console.log('Submitting form data:', data);
-
       // First, check if the email already exists
       const { data: existingUser } = await supabase
         .from('waitlist')
@@ -42,7 +41,7 @@ const WaitlistForm = () => {
         .single();
 
       if (existingUser) {
-        setErrorMessage('Este email ya está registrado en la lista de espera');
+        setErrorMessage(t('email-registered'));
         setSubmitStatus('error');
         return;
       }
@@ -58,34 +57,27 @@ const WaitlistForm = () => {
         .select()
         .single();
 
-      // Log the response from Supabase
-      console.log('Supabase insert response:', { data: insertedData, error });
-
       if (error) {
         console.error('Supabase error:', error);
         throw error;
       }
 
-      // Add this code to call the Edge Function directly
- // Add this right after your successful insert
-if (insertedData) {
-  // Try to send emails directly
-  fetch('https://gssfbipcfqjrfqghymfv.supabase.co/functions/v1/notify-waitlist', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ record: insertedData })
-  })
-  .then(response => console.log('Notification status:', response.status))
-  .catch(err => console.error('Notification error:', err));
-}
+      // Add this right after your successful insert
+      if (insertedData) {
+        fetch('https://gssfbipcfqjrfqghymfv.supabase.co/functions/v1/notify-waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ record: insertedData })
+        })
+        .then(response => console.log('Notification status:', response.status))
+        .catch(err => console.error('Notification error:', err));
+      }
 
       setSubmitStatus('success');
       reset();
     } catch (error: any) {
       console.error('Error details:', error);
-      setErrorMessage(
-        error?.message || 'Hubo un error al procesar tu registro. Por favor intenta de nuevo.'
-      );
+      setErrorMessage(t('error-occurred'));
       setSubmitStatus('error');
     }
   };
@@ -98,8 +90,8 @@ if (insertedData) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold mb-2">¡Gracias por registrarte!</h3>
-        <p className="text-gray-400">Te contactaremos pronto con más información.</p>
+        <h3 className="text-xl font-bold mb-2">{t('thanks-register')}</h3>
+        <p className="text-gray-400">{t('contact-soon')}</p>
       </div>
     );
   }
@@ -115,7 +107,7 @@ if (insertedData) {
       <div className="space-y-2">
         <input
           type="text"
-          placeholder="Nombre completo"
+          placeholder={t('full-name')}
           {...register('name')}
           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] focus:border-transparent text-white placeholder-gray-400"
         />
@@ -127,7 +119,7 @@ if (insertedData) {
       <div className="space-y-2">
         <input
           type="email"
-          placeholder="Email"
+          placeholder={t('email')}
           {...register('email')}
           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] focus:border-transparent text-white placeholder-gray-400"
         />
@@ -139,7 +131,7 @@ if (insertedData) {
       <div className="space-y-2">
         <input
           type="text"
-          placeholder="Nombre de tu box (opcional)"
+          placeholder={t('box-name')}
           {...register('box')}
           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] focus:border-transparent text-white placeholder-gray-400"
         />
@@ -156,7 +148,7 @@ if (insertedData) {
             <Loader2 className="w-5 h-5 animate-spin" />
           ) : (
             <>
-              RESERVA TU ACCESO
+              {t('reserve-access')}
               <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={2} />
             </>
           )}

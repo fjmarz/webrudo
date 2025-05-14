@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Dumbbell, Users, MessageSquare, Trophy, ArrowRight, User, UserCog, 
@@ -10,6 +9,7 @@ import WaitlistForm from './WaitlistForm';
 import Modal from './Modal';
 import Header from './Header';
 import Footer from './Footer';
+import { useI18n } from '../lib/i18n/context';
 
 const TestimonialCard = ({ name, role, quote }: {
   name: string;
@@ -141,6 +141,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <>
@@ -160,10 +161,10 @@ const LandingPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] sm:leading-none mb-6 px-4"
               >
-                Train athletes.
+                {t('hero-title')}
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] bg-clip-text text-transparent">
-                  Not spreadsheets.
+                  {t('hero-subtitle')}
                 </span>
               </motion.h1>
               
@@ -173,7 +174,7 @@ const LandingPage = () => {
                 transition={{ delay: 0.2 }}
                 className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-400 mb-10 px-4"
               >
-                RUDO gives CrossFit coaches everything they need to program, track, and grow — without wasting hours managing chaos.
+                {t('hero-description')}
               </motion.p>
               
               <motion.div 
@@ -188,7 +189,7 @@ const LandingPage = () => {
                 >
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] rounded-full blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
                   <span className="relative px-8 py-4 bg-[#0A0A0A] text-white rounded-full font-bold tracking-wide flex items-center justify-center gap-3 border border-white/10 hover:border-white/20 transition-all duration-500 w-full sm:w-auto">
-                    Join the Beta
+                    {t('join-beta')}
                     <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
                   </span>
                 </button>
@@ -201,9 +202,9 @@ const LandingPage = () => {
         <div className="py-24 bg-black/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Programming, Simplified.</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t('programming-simplified')}</h2>
               <p className="text-xl text-gray-400">
-                See how fast you can build and assign a training week inside RUDO.
+                {t('platform-preview')}
               </p>
             </div>
             
@@ -223,10 +224,10 @@ const LandingPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Built with feedback from coaches across 30+ top-tier gyms
+                {t('coaches-feedback')}
               </h2>
               <p className="text-xl text-gray-400">
-                Trusted by coaches designing high-performance programs for hundreds of athletes
+                {t('coaches-trust')}
               </p>
             </div>
             
@@ -255,10 +256,10 @@ const LandingPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Why Coaches Are Switching to RUDO
+                {t('why-switch')}
               </h2>
               <p className="text-xl text-gray-400">
-                Say goodbye to chaos. Say hello to control.
+                {t('chaos-control')}
               </p>
             </div>
             
@@ -303,7 +304,7 @@ const LandingPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Built for Both Sides of the Barbell
+                {t('both-sides')}
               </h2>
             </div>
             
@@ -362,7 +363,7 @@ const LandingPage = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Still Have Questions?
+                {t('still-questions')}
               </h2>
             </div>
             
@@ -395,10 +396,10 @@ const LandingPage = () => {
         <div className="py-24 bg-gradient-to-b from-transparent to-black">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to program like a pro?
+              {t('ready-to-pro')}
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              Join the coaches shaping the future of CrossFit training
+              {t('shape-future')}
             </p>
             
             <button
@@ -407,13 +408,13 @@ const LandingPage = () => {
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#8A2BE2] to-[#4169E1] rounded-full blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
               <span className="relative px-8 py-4 bg-[#0A0A0A] text-white rounded-full font-bold tracking-wide flex items-center gap-3 border border-white/10 hover:border-white/20 transition-all duration-500">
-                Request Access to the Beta
+                {t('request-access')}
                 <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
               </span>
             </button>
             
             <p className="text-sm text-gray-400 mt-6">
-              Already trusted by coaches programming for 300+ athletes
+              {t('trusted-by')}
             </p>
           </div>
         </div>
@@ -423,8 +424,8 @@ const LandingPage = () => {
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold mb-2">Join the RUDO Beta</h2>
-          <p className="text-gray-400">Be among the first to experience the future of CrossFit coaching</p>
+          <h2 className="text-2xl font-bold mb-2">{t('join-beta-title')}</h2>
+          <p className="text-gray-400">{t('join-beta-subtitle')}</p>
         </div>
         <WaitlistForm />
       </Modal>
