@@ -38,46 +38,49 @@ const ComparisonRow = ({ problem, solution, icon: Icon, problemSubtext, solution
   icon: React.ElementType;
   problemSubtext: string;
   solutionSubtext: string;
-}) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="grid md:grid-cols-2 gap-6 mb-8"
-  >
+}) => {
+  const { t } = useI18n();
+  return (
     <motion.div 
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="group p-6 bg-gradient-to-br from-red-500/5 to-red-900/5 rounded-2xl border border-red-500/10 hover:border-red-500/20 transition-all duration-300"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="grid md:grid-cols-2 gap-6 mb-8"
     >
-      <div className="flex items-start gap-4">
-        <div className="p-3 bg-red-500/10 rounded-xl">
-          <Icon className="w-6 h-6 text-red-400" />
+      <motion.div 
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 300 }}
+        className="group p-6 bg-gradient-to-br from-red-500/5 to-red-900/5 rounded-2xl border border-red-500/10 hover:border-red-500/20 transition-all duration-300"
+      >
+        <div className="flex items-start gap-4">
+          <div className="p-3 bg-red-500/10 rounded-xl">
+            <Icon className="w-6 h-6 text-red-400" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold mb-2 text-gray-200">{problem}</h3>
+            <p className="text-gray-400">{problemSubtext}</p>
+          </div>
         </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2 text-gray-200">{problem}</h3>
-          <p className="text-gray-400">{problemSubtext}</p>
+      </motion.div>
+      
+      <motion.div 
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 300 }}
+        className="group p-6 bg-gradient-to-br from-[#8A2BE2]/10 to-[#4169E1]/10 rounded-2xl border border-[#8A2BE2]/20 hover:border-[#8A2BE2]/30 transition-all duration-300"
+      >
+        <div className="flex items-start gap-4">
+          <div className="p-3 bg-[#8A2BE2]/20 rounded-xl">
+            <Icon className="w-6 h-6 text-[#8A2BE2]" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold mb-2">{solution}</h3>
+            <p className="text-gray-400">{solutionSubtext}</p>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
-    
-    <motion.div 
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="group p-6 bg-gradient-to-br from-[#8A2BE2]/10 to-[#4169E1]/10 rounded-2xl border border-[#8A2BE2]/20 hover:border-[#8A2BE2]/30 transition-all duration-300"
-    >
-      <div className="flex items-start gap-4">
-        <div className="p-3 bg-[#8A2BE2]/20 rounded-xl">
-          <Icon className="w-6 h-6 text-[#8A2BE2]" />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">{solution}</h3>
-          <p className="text-gray-400">{solutionSubtext}</p>
-        </div>
-      </div>
-    </motion.div>
-  </motion.div>
-);
+  );
+};
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -265,34 +268,34 @@ const LandingPage = () => {
             
             <div className="space-y-6">
               <ComparisonRow
-                problem="Dozens of tabs. No structure."
-                solution="Drag-and-drop full weeks in minutes."
-                problemSubtext="Where the hell is Tuesday's WOD?"
-                solutionSubtext="One clean calendar. Total control."
+                problem={t('spreadsheet-problem')}
+                solution={t('spreadsheet-solution')}
+                problemSubtext={t('spreadsheet-problem-subtext')}
+                solutionSubtext={t('spreadsheet-solution-subtext')}
                 icon={FileSpreadsheet}
               />
               
               <ComparisonRow
-                problem="Copy-paste for every athlete."
-                solution="Assign to groups in one click."
-                problemSubtext="Manual updates = wasted time"
-                solutionSubtext="Bulk actions, instant updates"
+                problem={t('copy-paste-problem')}
+                solution={t('copy-paste-solution')}
+                problemSubtext={t('copy-paste-problem-subtext')}
+                solutionSubtext={t('copy-paste-solution-subtext')}
                 icon={UsersRound}
               />
               
               <ComparisonRow
-                problem="Feedback lost in DMs."
-                solution="Comments tracked & organized."
-                problemSubtext="Scattered across apps & chats"
-                solutionSubtext="All feedback in one place"
+                problem={t('feedback-problem')}
+                solution={t('feedback-solution')}
+                problemSubtext={t('feedback-problem-subtext')}
+                solutionSubtext={t('feedback-solution-subtext')}
                 icon={MessageCircle}
               />
               
               <ComparisonRow
-                problem="Looks amateur."
-                solution="Sleek branded platform."
-                problemSubtext="Generic spreadsheets & docs"
-                solutionSubtext="Professional, custom experience"
+                problem={t('branding-problem')}
+                solution={t('branding-solution')}
+                problemSubtext={t('branding-problem-subtext')}
+                solutionSubtext={t('branding-solution-subtext')}
                 icon={Palette}
               />
             </div>
@@ -314,20 +317,20 @@ const LandingPage = () => {
                   <div className="p-3 bg-[#8A2BE2]/20 rounded-xl">
                     <UserCog className="w-6 h-6 text-[#8A2BE2]" />
                   </div>
-                  <h3 className="text-2xl font-bold">For Coaches</h3>
+                  <h3 className="text-2xl font-bold">{t('coach-features-title')}</h3>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#8A2BE2]" />
-                    <span>Save hours on programming and admin</span>
+                    <span>{t('save-time')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Users className="w-5 h-5 text-[#8A2BE2]" />
-                    <span>Manage multiple groups efficiently</span>
+                    <span>{t('manage-groups')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Star className="w-5 h-5 text-[#8A2BE2]" />
-                    <span>Look professional with branded apps</span>
+                    <span>{t('look-pro')}</span>
                   </li>
                 </ul>
               </div>
@@ -337,20 +340,20 @@ const LandingPage = () => {
                   <div className="p-3 bg-[#4169E1]/20 rounded-xl">
                     <User className="w-6 h-6 text-[#4169E1]" />
                   </div>
-                  <h3 className="text-2xl font-bold">For Athletes</h3>
+                  <h3 className="text-2xl font-bold">{t('athlete-features-title')}</h3>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
                     <Smartphone className="w-5 h-5 text-[#4169E1]" />
-                    <span>Access workouts anywhere, anytime</span>
+                    <span>{t('access-workouts')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <MessageSquare className="w-5 h-5 text-[#4169E1]" />
-                    <span>Give and receive feedback instantly</span>
+                    <span>{t('instant-feedback')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <BarChart3 className="w-5 h-5 text-[#4169E1]" />
-                    <span>Track progress with detailed analytics</span>
+                    <span>{t('track-progress')}</span>
                   </li>
                 </ul>
               </div>
