@@ -79,6 +79,39 @@ export const translations = {
     'contact-soon': "We'll contact you soon with more information.",
     'email-registered': 'This email is already registered in the waitlist',
     'error-occurred': 'An error occurred while processing your registration. Please try again.',
+
+    // Comparison Section
+    'spreadsheet-problem': 'Dozens of tabs. No structure.',
+    'spreadsheet-solution': 'Drag-and-drop full weeks in minutes.',
+    'spreadsheet-problem-subtext': "Where the hell is Tuesday's WOD?",
+    'spreadsheet-solution-subtext': 'One clean calendar. Total control.',
+    
+    'copy-paste-problem': 'Copy-paste for every athlete.',
+    'copy-paste-solution': 'Assign to groups in one click.',
+    'copy-paste-problem-subtext': 'Manual updates = wasted time',
+    'copy-paste-solution-subtext': 'Bulk actions, instant updates',
+    
+    'feedback-problem': 'Feedback lost in DMs.',
+    'feedback-solution': 'Comments tracked & organized.',
+    'feedback-problem-subtext': 'Scattered across apps & chats',
+    'feedback-solution-subtext': 'All feedback in one place',
+    
+    'branding-problem': 'Looks amateur.',
+    'branding-solution': 'Sleek branded platform.',
+    'branding-problem-subtext': 'Generic spreadsheets & docs',
+    'branding-solution-subtext': 'Professional, custom experience',
+
+    // Coach Features
+    'coach-features-title': 'For Coaches',
+    'save-time': 'Save hours on programming and admin',
+    'manage-groups': 'Manage multiple groups efficiently',
+    'look-pro': 'Look professional with branded apps',
+
+    // Athlete Features
+    'athlete-features-title': 'For Athletes',
+    'access-workouts': 'Access workouts anywhere, anytime',
+    'instant-feedback': 'Give and receive feedback instantly',
+    'track-progress': 'Track progress with detailed analytics'
   },
   es: {
     // Navigation
@@ -160,5 +193,38 @@ export const translations = {
     'contact-soon': 'Te contactaremos pronto con más información.',
     'email-registered': 'Este email ya está registrado en la lista de espera',
     'error-occurred': 'Hubo un error al procesar tu registro. Por favor intenta de nuevo.',
+
+    // Comparison Section
+    'spreadsheet-problem': 'Docenas de pestañas. Sin estructura.',
+    'spreadsheet-solution': 'Arrastra y suelta semanas completas en minutos.',
+    'spreadsheet-problem-subtext': '¿Dónde está el WOD del martes?',
+    'spreadsheet-solution-subtext': 'Un calendario limpio. Control total.',
+    
+    'copy-paste-problem': 'Copiar y pegar para cada atleta.',
+    'copy-paste-solution': 'Asigna a grupos con un clic.',
+    'copy-paste-problem-subtext': 'Actualizaciones manuales = tiempo perdido',
+    'copy-paste-solution-subtext': 'Acciones en masa, actualizaciones instantáneas',
+    
+    'feedback-problem': 'Feedback perdido en DMs.',
+    'feedback-solution': 'Comentarios organizados y rastreados.',
+    'feedback-problem-subtext': 'Disperso en apps y chats',
+    'feedback-solution-subtext': 'Todo el feedback en un solo lugar',
+    
+    'branding-problem': 'Parece amateur.',
+    'branding-solution': 'Plataforma profesional con tu marca.',
+    'branding-problem-subtext': 'Hojas de cálculo y docs genéricos',
+    'branding-solution-subtext': 'Experiencia profesional personalizada',
+
+    // Coach Features
+    'coach-features-title': 'Para Coaches',
+    'save-time': 'Ahorra horas en programación y admin',
+    'manage-groups': 'Gestiona múltiples grupos eficientemente',
+    'look-pro': 'Luce profesional con apps personalizadas',
+
+    // Athlete Features
+    'athlete-features-title': 'Para Atletas',
+    'access-workouts': 'Accede a los entrenamientos donde sea, cuando sea',
+    'instant-feedback': 'Da y recibe feedback instantáneamente',
+    'track-progress': 'Sigue tu progreso con análisis detallados'
   }
 };
