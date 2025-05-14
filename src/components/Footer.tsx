@@ -68,13 +68,13 @@ const Footer = () => {
             >
               info@rudofit.com
             </a>
-            <a
-              href="https://app.rudofit.com"
+            <Link
+              to="/login"
               className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
             >
               <LogIn className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               <span>Login</span>
-            </a>
+            </Link>
           </div>
         </div>
 
