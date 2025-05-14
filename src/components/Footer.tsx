@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LogIn } from 'lucide-react';
+import { useI18n } from '../lib/i18n/context';
 
 const Footer = () => {
+  const { t } = useI18n();
+  
   return (
     <footer className="bg-black/50 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -18,41 +21,41 @@ const Footer = () => {
           {/* Main Links */}
           <div className="grid grid-cols-2 gap-8 md:gap-4">
             <div>
-              <h3 className="text-sm font-semibold mb-4">Product</h3>
+              <h3 className="text-sm font-semibold mb-4">{t('product')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link to="#features" className="text-gray-400 hover:text-white transition-colors">
-                    Features
+                    {t('features')}
                   </Link>
                 </li>
                 <li>
                   <Link to="#how-it-works" className="text-gray-400 hover:text-white transition-colors">
-                    How it Works
+                    {t('how-it-works')}
                   </Link>
                 </li>
                 <li>
                   <Link to="#faq" className="text-gray-400 hover:text-white transition-colors">
-                    FAQ
+                    {t('faq')}
                   </Link>
                 </li>
                 <li>
                   <Link to="#beta" className="text-gray-400 hover:text-white transition-colors">
-                    Join the Beta
+                    {t('join-beta')}
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-4">Legal</h3>
+              <h3 className="text-sm font-semibold mb-4">{t('legal')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                    Privacy Policy
+                    {t('privacy-policy')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
-                    Terms of Service
+                    {t('terms-of-service')}
                   </Link>
                 </li>
               </ul>
@@ -61,7 +64,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Contact</h3>
+            <h3 className="text-sm font-semibold mb-4">{t('contact')}</h3>
             <a
               href="mailto:info@rudofit.com"
               className="text-gray-400 hover:text-white transition-colors block mb-4"
@@ -73,7 +76,7 @@ const Footer = () => {
               className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
             >
               <LogIn className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              <span>Login</span>
+              <span>{t('sign-in')}</span>
             </Link>
           </div>
         </div>
@@ -81,7 +84,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <p className="text-center text-sm text-gray-400">
-            Built in 🇦🇷 Powered by the RUDO team
+            {t('built-in')}
           </p>
         </div>
       </div>
