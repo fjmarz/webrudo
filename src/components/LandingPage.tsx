@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Dumbbell, Users, MessageSquare, Trophy, ArrowRight, User, UserCog, 
-  Calendar, BarChart3, Smartphone, Clock, Play, Star, CheckCheck, XCircle,
+  Calendar, BarChart3, Smartphone, Clock, Star, CheckCheck, XCircle,
   FileSpreadsheet, UsersRound, MessageCircle, Palette, ChevronDown, Plus
 } from 'lucide-react';
 import WaitlistForm from './WaitlistForm';
@@ -141,7 +141,6 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <>
@@ -193,14 +192,6 @@ const LandingPage = () => {
                     <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
                   </span>
                 </button>
-                
-                <button 
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="px-8 py-4 bg-white/5 text-white rounded-full font-bold tracking-wide border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 flex items-center justify-center gap-2 w-full sm:w-auto"
-                >
-                  <Play className="w-5 h-5" />
-                  See Live Demo
-                </button>
               </motion.div>
             </div>
           </div>
@@ -223,15 +214,6 @@ const LandingPage = () => {
                 alt="RUDO Platform Interface"
                 className="w-full h-auto relative z-10"
               />
-              <button
-                onClick={() => setIsVideoModalOpen(true)}
-                className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity"
-              >
-                <div className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full">
-                  <Play className="w-5 h-5" />
-                  <span>Watch 60s walkthrough</span>
-                </div>
-              </button>
             </div>
           </div>
         </div>
@@ -269,7 +251,7 @@ const LandingPage = () => {
         </div>
 
         {/* Why Coaches Are Switching Section */}
-        <div className="py-24 bg-black/30">
+        <div id="why-coaches" className="py-24 bg-black/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -376,7 +358,7 @@ const LandingPage = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="py-24 bg-black/30">
+        <div id="faq" className="py-24 bg-black/30">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -445,12 +427,6 @@ const LandingPage = () => {
           <p className="text-gray-400">Be among the first to experience the future of CrossFit coaching</p>
         </div>
         <WaitlistForm />
-      </Modal>
-
-      <Modal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)}>
-        <div className="aspect-video bg-black/50 rounded-lg flex items-center justify-center">
-          <p className="text-gray-400">Video demo coming soon</p>
-        </div>
       </Modal>
     </>
   );
