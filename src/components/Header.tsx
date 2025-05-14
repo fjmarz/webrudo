@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Modal from './Modal';
 import WaitlistForm from './WaitlistForm';
-import { scrollToElement } from '../lib/utils';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,27 +50,18 @@ const Header = () => {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a
-                href="#features"
-                onClick={(e) => handleNavClick(e, 'features')}
-                className="text-sm text-gray-300 hover:text-white transition-colors"
-              >
-                Features
-              </a>
-              <a
-                href="#how-it-works"
-                onClick={(e) => handleNavClick(e, 'how-it-works')}
+              <button
+                onClick={(e) => handleNavClick(e as any, 'why-coaches')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
                 How it Works
-              </a>
-              <a
-                href="#faq"
-                onClick={(e) => handleNavClick(e, 'faq')}
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e as any, 'faq')}
                 className="text-sm text-gray-300 hover:text-white transition-colors"
               >
                 FAQ
-              </a>
+              </button>
             </nav>
 
             {/* CTA Button */}
