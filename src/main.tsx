@@ -1,17 +1,16 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { I18nProvider } from './lib/i18n/context';
+import App from './App';
+import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <I18nProvider>
-      <App />
-    </I18nProvider>
-  </StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <I18nProvider>
+        <App />
+      </I18nProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
-
-// Register service worker
-serviceWorkerRegistration.register();

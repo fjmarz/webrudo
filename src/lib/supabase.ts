@@ -21,9 +21,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 const testConnection = async (retries = 3, delay = 2000) => {
   for (let i = 0; i < retries; i++) {
     try {
-      const { data, error } = await supabase
-        .from('waitlist')
-        .select('count');
+      const { error } = await supabase.auth.getSession();
 
       if (error) {
         console.warn(`Supabase connection attempt ${i + 1} failed:`, error);
