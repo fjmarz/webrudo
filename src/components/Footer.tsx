@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LogIn } from 'lucide-react';
+import { LogIn, Instagram } from 'lucide-react';
 import { useI18n } from '../lib/i18n/context';
 
 const Footer = () => {
@@ -87,19 +87,30 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold mb-4">{t('contact')}</h3>
-            <a
-              href="mailto:info@rudofit.com"
-              className="text-gray-400 hover:text-white transition-colors block mb-4"
-            >
-              info@rudofit.com
-            </a>
-            <Link
-              to="/login"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
-            >
-              <LogIn className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              <span>{t('sign-in')}</span>
-            </Link>
+            <div className="space-y-4">
+              <a
+                href="mailto:info@rudofit.com"
+                className="text-gray-400 hover:text-white transition-colors block"
+              >
+                info@rudofit.com
+              </a>
+              <a
+                href="https://www.instagram.com/rudo.fit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+              >
+                <Instagram className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                <span>@rudo.fit</span>
+              </a>
+              <Link
+                to="/login"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group block"
+              >
+                <LogIn className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <span>{t('sign-in')}</span>
+              </Link>
+            </div>
           </div>
         </div>
 
