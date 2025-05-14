@@ -6,6 +6,21 @@ import { useI18n } from '../lib/i18n/context';
 const Footer = () => {
   const { t } = useI18n();
   
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-black/50 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -24,24 +39,31 @@ const Footer = () => {
               <h3 className="text-sm font-semibold mb-4">{t('product')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="#features" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="#why-coaches"
+                    onClick={(e) => handleNavClick(e, 'why-coaches')}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {t('features')}
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="#how-it-works" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="#how-it-works"
+                    onClick={(e) => handleNavClick(e, 'how-it-works')}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {t('how-it-works')}
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="#faq" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="#faq"
+                    onClick={(e) => handleNavClick(e, 'faq')}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {t('faq')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#beta" className="text-gray-400 hover:text-white transition-colors">
-                    {t('join-beta')}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
