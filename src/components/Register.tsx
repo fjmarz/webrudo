@@ -8,19 +8,19 @@ import { supabase } from '../lib/supabase';
 import { useI18n } from '../lib/i18n/context';
 import LanguageToggle from './LanguageToggle';
 
-const registerSchema = z.object({
-  email: z.string().email(t('invalid-email')),
-  password: z.string().min(6, t('password-min-length')),
-  role: z.enum(['coach', 'athlete']),
-});
-
-type RegisterFormData = z.infer<typeof registerSchema>;
-
 const Register = () => {
   const { t } = useI18n();
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState<'coach' | 'athlete' | null>(null);
   const [isRegistering, setIsRegistering] = useState(false);
+
+  const registerSchema = z.object({
+    email: z.string().email(t('invalid-email')),
+    password: z.string().min(6, t('password-min-length')),
+    role: z.enum(['coach', 'athlete']),
+  });
+
+  type RegisterFormData = z.infer<typeof registerSchema>;
 
   const {
     register,
