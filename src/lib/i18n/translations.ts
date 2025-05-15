@@ -20,6 +20,11 @@ export const translations = {
     'welcome-back': 'Welcome Back',
     'sign-in-to-access': 'Sign in to access your account',
     'back-to-home': 'Back to home',
+    'create-account': 'Create Account',
+    'creating-account': 'Creating Account...',
+    'join-community': 'Join our community of athletes and coaches',
+    'already-have-account': 'Already have an account?',
+    'back-to-role-selection': 'Back to role selection',
 
     // Footer
     'product': 'Product',
@@ -134,6 +139,11 @@ export const translations = {
     'welcome-back': 'Bienvenido de nuevo',
     'sign-in-to-access': 'Inicia sesión para acceder a tu cuenta',
     'back-to-home': 'Volver al inicio',
+    'create-account': 'Crear Cuenta',
+    'creating-account': 'Creando Cuenta...',
+    'join-community': 'Únete a nuestra comunidad de atletas y entrenadores',
+    'already-have-account': '¿Ya tienes una cuenta?',
+    'back-to-role-selection': 'Volver a selección de rol',
 
     // Footer
     'product': 'Producto',
