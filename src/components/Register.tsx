@@ -9,8 +9,8 @@ import { useI18n } from '../lib/i18n/context';
 import LanguageToggle from './LanguageToggle';
 
 const registerSchema = z.object({
-  email: z.string().email('Please enter a valid email'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
+  email: z.string().email(t('invalid-email')),
+  password: z.string().min(6, t('password-min-length')),
   role: z.enum(['coach', 'athlete']),
 });
 
@@ -46,7 +46,6 @@ const Register = () => {
 
       if (error) throw error;
 
-      // Redirect to success page or dashboard
       navigate('/dashboard');
     } catch (error: any) {
       setError('root', {
@@ -110,10 +109,10 @@ const Register = () => {
                 className="w-full p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors text-left group"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">Coach</h3>
+                  <h3 className="text-xl font-semibold">{t('coach-role-title')}</h3>
                   <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-gray-400">Create and manage training programs for your athletes</p>
+                <p className="text-gray-400">{t('coach-role-description')}</p>
               </button>
 
               <button
@@ -121,10 +120,10 @@ const Register = () => {
                 className="w-full p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors text-left group"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">Athlete</h3>
+                  <h3 className="text-xl font-semibold">{t('athlete-role-title')}</h3>
                   <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-gray-400">Follow your training program and track your progress</p>
+                <p className="text-gray-400">{t('athlete-role-description')}</p>
               </button>
             </div>
           ) : (
@@ -228,10 +227,10 @@ const Register = () => {
         <div className="w-full max-w-lg mx-auto flex flex-col justify-center p-12">
           <h2 className="text-2xl font-bold mb-8">
             {selectedRole === 'coach'
-              ? 'Build your coaching business'
+              ? t('coach-benefits-title')
               : selectedRole === 'athlete'
-              ? 'Achieve your fitness goals'
-              : 'Join the RUDO community'}
+              ? t('athlete-benefits-title')
+              : t('join-rudo-title')}
           </h2>
           
           <div className="space-y-6">
@@ -242,17 +241,17 @@ const Register = () => {
               <div>
                 <h3 className="font-semibold mb-1">
                   {selectedRole === 'coach'
-                    ? 'Program like a pro'
+                    ? t('coach-feature-title')
                     : selectedRole === 'athlete'
-                    ? 'Train with purpose'
-                    : 'Choose your path'}
+                    ? t('athlete-feature-title')
+                    : t('choose-path-title')}
                 </h3>
                 <p className="text-gray-400">
                   {selectedRole === 'coach'
-                    ? 'Create and manage training programs effortlessly'
+                    ? t('coach-feature-description')
                     : selectedRole === 'athlete'
-                    ? 'Follow your training program and track progress'
-                    : 'Start your fitness journey as a coach or athlete'}
+                    ? t('athlete-feature-description')
+                    : t('choose-path-description')}
                 </p>
               </div>
             </div>
