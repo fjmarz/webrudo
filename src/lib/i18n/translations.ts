@@ -38,6 +38,9 @@ export const translations = {
     'coach-feature-description': 'Create and manage training programs effortlessly',
     'athlete-feature-description': 'Follow your training program and track progress',
     'choose-path-description': 'Start your fitness journey as a coach or athlete',
+    'invalid-email': 'Please enter a valid email',
+    'password-min-length': 'Password must be at least 6 characters',
+    'error-occurred': 'An error occurred. Please try again.',
 
     // Footer
     'product': 'Product',
@@ -46,8 +49,6 @@ export const translations = {
     'privacy-policy': 'Privacy Policy',
     'terms-of-service': 'Terms of Service',
     'built-in': 'Built in 🇦🇷 Powered by the RUDO team',
-
-    // Rest of the English translations...
   },
   es: {
     // Navigation
@@ -88,6 +89,9 @@ export const translations = {
     'coach-feature-description': 'Crea y gestiona programas de entrenamiento sin esfuerzo',
     'athlete-feature-description': 'Sigue tu programa de entrenamiento y registra tu progreso',
     'choose-path-description': 'Comienza tu viaje fitness como entrenador o atleta',
+    'invalid-email': 'Por favor ingresa un email válido',
+    'password-min-length': 'La contraseña debe tener al menos 6 caracteres',
+    'error-occurred': 'Ocurrió un error. Por favor intenta de nuevo.',
 
     // Footer
     'product': 'Producto',
@@ -96,7 +100,5 @@ export const translations = {
     'privacy-policy': 'Política de Privacidad',
     'terms-of-service': 'Términos de Servicio',
     'built-in': 'Hecho en 🇦🇷 Impulsado por el equipo RUDO',
-
-    // Rest of the Spanish translations...
   }
 };
