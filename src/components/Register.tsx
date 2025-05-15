@@ -8,19 +8,19 @@ import { supabase } from '../lib/supabase';
 import { useI18n } from '../lib/i18n/context';
 import LanguageToggle from './LanguageToggle';
 
+const registerSchema = z.object({
+  email: z.string().email('Please enter a valid email'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+  role: z.enum(['coach', 'athlete']),
+});
+
+type RegisterFormData = z.infer<typeof registerSchema>;
+
 const Register = () => {
   const { t } = useI18n();
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState<'coach' | 'athlete' | null>(null);
   const [isRegistering, setIsRegistering] = useState(false);
-
-  const registerSchema = z.object({
-    email: z.string().email(t('invalid-email')),
-    password: z.string().min(6, t('password-min-length')),
-    role: z.enum(['coach', 'athlete']),
-  });
-
-  type RegisterFormData = z.infer<typeof registerSchema>;
 
   const {
     register,
@@ -46,6 +46,7 @@ const Register = () => {
 
       if (error) throw error;
 
+      // Redirect to success page or dashboard
       navigate('/dashboard');
     } catch (error: any) {
       setError('root', {
@@ -109,10 +110,10 @@ const Register = () => {
                 className="w-full p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors text-left group"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">{t('coach-role-title')}</h3>
+                  <h3 className="text-xl font-semibold">Coach</h3>
                   <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-gray-400">{t('coach-role-description')}</p>
+                <p className="text-gray-400">Create and manage training programs for your athletes</p>
               </button>
 
               <button
@@ -120,10 +121,10 @@ const Register = () => {
                 className="w-full p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors text-left group"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">{t('athlete-role-title')}</h3>
+                  <h3 className="text-xl font-semibold">Athlete</h3>
                   <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-gray-400">{t('athlete-role-description')}</p>
+                <p className="text-gray-400">Follow your training program and track your progress</p>
               </button>
             </div>
           ) : (
@@ -227,10 +228,10 @@ const Register = () => {
         <div className="w-full max-w-lg mx-auto flex flex-col justify-center p-12">
           <h2 className="text-2xl font-bold mb-8">
             {selectedRole === 'coach'
-              ? t('coach-benefits-title')
+              ? 'Build your coaching business'
               : selectedRole === 'athlete'
-              ? t('athlete-benefits-title')
-              : t('join-rudo-title')}
+              ? 'Achieve your fitness goals'
+              : 'Join the RUDO community'}
           </h2>
           
           <div className="space-y-6">
@@ -241,17 +242,17 @@ const Register = () => {
               <div>
                 <h3 className="font-semibold mb-1">
                   {selectedRole === 'coach'
-                    ? t('coach-feature-title')
+                    ? 'Program like a pro'
                     : selectedRole === 'athlete'
-                    ? t('athlete-feature-title')
-                    : t('choose-path-title')}
+                    ? 'Train with purpose'
+                    : 'Choose your path'}
                 </h3>
                 <p className="text-gray-400">
                   {selectedRole === 'coach'
-                    ? t('coach-feature-description')
+                    ? 'Create and manage training programs effortlessly'
                     : selectedRole === 'athlete'
-                    ? t('athlete-feature-description')
-                    : t('choose-path-description')}
+                    ? 'Follow your training program and track progress'
+                    : 'Start your fitness journey as a coach or athlete'}
                 </p>
               </div>
             </div>

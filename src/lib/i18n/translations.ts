@@ -25,22 +25,6 @@ export const translations = {
     'join-community': 'Join our community of athletes and coaches',
     'already-have-account': 'Already have an account?',
     'back-to-role-selection': 'Back to role selection',
-    'coach-role-title': 'Coach',
-    'coach-role-description': 'Create and manage training programs for your athletes',
-    'athlete-role-title': 'Athlete',
-    'athlete-role-description': 'Follow your training program and track your progress',
-    'coach-benefits-title': 'Build your coaching business',
-    'athlete-benefits-title': 'Achieve your fitness goals',
-    'join-rudo-title': 'Join the RUDO community',
-    'coach-feature-title': 'Program like a pro',
-    'athlete-feature-title': 'Train with purpose',
-    'choose-path-title': 'Choose your path',
-    'coach-feature-description': 'Create and manage training programs effortlessly',
-    'athlete-feature-description': 'Follow your training program and track progress',
-    'choose-path-description': 'Start your fitness journey as a coach or athlete',
-    'invalid-email': 'Please enter a valid email',
-    'password-min-length': 'Password must be at least 6 characters',
-    'error-occurred': 'An error occurred. Please try again.',
 
     // Footer
     'product': 'Product',
@@ -49,6 +33,90 @@ export const translations = {
     'privacy-policy': 'Privacy Policy',
     'terms-of-service': 'Terms of Service',
     'built-in': 'Built in 🇦🇷 Powered by the RUDO team',
+
+    // Landing
+    'hero-title': 'Train athletes.',
+    'hero-subtitle': 'Not spreadsheets.',
+    'hero-description': 'RUDO gives CrossFit coaches everything they need to program, track, and grow — without wasting hours managing chaos.',
+    'request-access': 'Request Access to the Beta',
+    'trusted-by': 'Already trusted by coaches programming for 300+ athletes',
+    'programming-simplified': 'Programming, Simplified.',
+    'platform-preview': 'See how fast you can build and assign a training week inside RUDO.',
+    'coaches-feedback': 'Built with feedback from coaches across 30+ top-tier gyms',
+    'coaches-trust': 'Trusted by coaches designing high-performance programs for hundreds of athletes',
+    'why-switch': 'Why Coaches Are Switching to RUDO',
+    'chaos-control': 'Say goodbye to chaos. Say hello to control.',
+    'both-sides': 'Built for Both Sides of the Barbell',
+    'still-questions': 'Still Have Questions?',
+    'ready-to-pro': 'Ready to program like a pro?',
+    'shape-future': 'Join the coaches shaping the future of CrossFit training',
+
+    // Testimonials
+    'testimonial-1-quote': 'RUDO replaced Google Sheets and saved me 6 hours a week.',
+    'testimonial-1-name': 'Carlos Rodriguez',
+    'testimonial-1-role': 'Head Coach, CrossFit Madrid',
+    'testimonial-2-quote': 'Finally, software that understands how CrossFit coaches actually work.',
+    'testimonial-2-name': 'Sarah Thompson',
+    'testimonial-2-role': 'Owner, CrossFit Elite',
+    'testimonial-3-quote': 'The athlete feedback loop is a game-changer for remote coaching.',
+    'testimonial-3-name': 'Juan Martinez',
+    'testimonial-3-role': 'Programming Director, CrossFit Buenos Aires',
+
+    // FAQ
+    'faq-1-question': 'Can I use RUDO for both group and 1-on-1 clients?',
+    'faq-1-answer': 'Yes — assign programs to individuals, small groups, or your entire roster in one click.',
+    'faq-2-question': 'Do my athletes need to download anything?',
+    'faq-2-answer': 'Nope. They get instant access through a mobile-friendly web app — no installs, no friction.',
+    'faq-3-question': 'What makes RUDO different from other coaching platforms?',
+    'faq-3-answer': 'RUDO is purpose-built for CrossFit and HYROX coaches — not generic trainers. Every feature is designed around real-world programming, feedback, and athlete flow in high-performance functional training environments.',
+    'faq-4-question': 'Can I customize my own programming blocks?',
+    'faq-4-answer': 'Yes. Build, reuse, and edit your own templates — warm-ups, EMOMs, skills — and deploy them in seconds.',
+    'faq-5-question': "What's included in the beta?",
+    'faq-5-answer': 'Full access to all core features, direct access to the founding team, and lifetime perks for helping us shape the future of RUDO.',
+
+    // Beta Form
+    'join-beta-title': 'Join the RUDO Beta',
+    'join-beta-subtitle': 'Be among the first to experience the future of CrossFit coaching',
+    'full-name': 'Full Name',
+    'box-name': 'Box name (optional)',
+    'reserve-access': 'RESERVE YOUR ACCESS',
+    'thanks-register': 'Thanks for registering!',
+    'contact-soon': "We'll contact you soon with more information.",
+    'email-registered': 'This email is already registered in the waitlist',
+    'error-occurred': 'An error occurred while processing your registration. Please try again.',
+
+    // Comparison Section
+    'spreadsheet-problem': 'Dozens of tabs. No structure.',
+    'spreadsheet-solution': 'Drag-and-drop full weeks in minutes.',
+    'spreadsheet-problem-subtext': "Where the hell is Tuesday's WOD?",
+    'spreadsheet-solution-subtext': 'One clean calendar. Total control.',
+    
+    'copy-paste-problem': 'Copy-paste for every athlete.',
+    'copy-paste-solution': 'Assign to groups in one click.',
+    'copy-paste-problem-subtext': 'Manual updates = wasted time',
+    'copy-paste-solution-subtext': 'Bulk actions, instant updates',
+    
+    'feedback-problem': 'Feedback lost in DMs.',
+    'feedback-solution': 'Comments tracked & organized.',
+    'feedback-problem-subtext': 'Scattered across apps & chats',
+    'feedback-solution-subtext': 'All feedback in one place',
+    
+    'branding-problem': 'Looks amateur.',
+    'branding-solution': 'Sleek branded platform.',
+    'branding-problem-subtext': 'Generic spreadsheets & docs',
+    'branding-solution-subtext': 'Professional, custom experience',
+
+    // Coach Features
+    'coach-features-title': 'For Coaches',
+    'save-time': 'Save hours on programming and admin',
+    'manage-groups': 'Manage multiple groups efficiently',
+    'look-pro': 'Look professional with branded apps',
+
+    // Athlete Features
+    'athlete-features-title': 'For Athletes',
+    'access-workouts': 'Access workouts anywhere, anytime',
+    'instant-feedback': 'Give and receive feedback instantly',
+    'track-progress': 'Track progress with detailed analytics'
   },
   es: {
     // Navigation
@@ -60,7 +128,7 @@ export const translations = {
     // Auth
     'sign-in': 'Iniciar Sesión',
     'sign-up': 'Registrarse',
-    'email': 'Correo electrónico',
+    'email': 'Email',
     'password': 'Contraseña',
     'remember-me': 'Recordarme',
     'forgot-password': '¿Olvidaste tu contraseña?',
@@ -76,22 +144,6 @@ export const translations = {
     'join-community': 'Únete a nuestra comunidad de atletas y entrenadores',
     'already-have-account': '¿Ya tienes una cuenta?',
     'back-to-role-selection': 'Volver a selección de rol',
-    'coach-role-title': 'Entrenador',
-    'coach-role-description': 'Crea y gestiona programas de entrenamiento para tus atletas',
-    'athlete-role-title': 'Atleta',
-    'athlete-role-description': 'Sigue tu programa de entrenamiento y registra tu progreso',
-    'coach-benefits-title': 'Construye tu negocio de entrenamiento',
-    'athlete-benefits-title': 'Alcanza tus objetivos fitness',
-    'join-rudo-title': 'Únete a la comunidad RUDO',
-    'coach-feature-title': 'Programa como un profesional',
-    'athlete-feature-title': 'Entrena con propósito',
-    'choose-path-title': 'Elige tu camino',
-    'coach-feature-description': 'Crea y gestiona programas de entrenamiento sin esfuerzo',
-    'athlete-feature-description': 'Sigue tu programa de entrenamiento y registra tu progreso',
-    'choose-path-description': 'Comienza tu viaje fitness como entrenador o atleta',
-    'invalid-email': 'Por favor ingresa un email válido',
-    'password-min-length': 'La contraseña debe tener al menos 6 caracteres',
-    'error-occurred': 'Ocurrió un error. Por favor intenta de nuevo.',
 
     // Footer
     'product': 'Producto',
@@ -100,5 +152,89 @@ export const translations = {
     'privacy-policy': 'Política de Privacidad',
     'terms-of-service': 'Términos de Servicio',
     'built-in': 'Hecho en 🇦🇷 Impulsado por el equipo RUDO',
+
+    // Landing
+    'hero-title': 'Entrena atletas.',
+    'hero-subtitle': 'No hojas de cálculo.',
+    'hero-description': 'RUDO brinda a los entrenadores de CrossFit todo lo que necesitan para programar, hacer seguimiento y crecer, sin perder horas gestionando el caos.',
+    'request-access': 'Solicitar Acceso a la Beta',
+    'trusted-by': 'Ya confían en nosotros entrenadores que programan para más de 300 atletas',
+    'programming-simplified': 'Programación, Simplificada.',
+    'platform-preview': 'Mira qué tan rápido puedes crear y asignar una semana de entrenamiento en RUDO.',
+    'coaches-feedback': 'Construido con feedback de entrenadores de más de 30 boxes de primer nivel',
+    'coaches-trust': 'De confianza para entrenadores que diseñan programas de alto rendimiento para cientos de atletas',
+    'why-switch': '¿Por qué los Entrenadores están Cambiando a RUDO?',
+    'chaos-control': 'Di adiós al caos. Da la bienvenida al control.',
+    'both-sides': 'Construido para Ambos Lados de la Barra',
+    'still-questions': '¿Aún tienes preguntas?',
+    'ready-to-pro': '¿Listo para programar como un pro?',
+    'shape-future': 'Únete a los entrenadores que están dando forma al futuro del entrenamiento CrossFit',
+
+    // Testimonials
+    'testimonial-1-quote': 'RUDO reemplazó Google Sheets y me ahorró 6 horas por semana.',
+    'testimonial-1-name': 'Carlos Rodriguez',
+    'testimonial-1-role': 'Head Coach, CrossFit Madrid',
+    'testimonial-2-quote': 'Por fin, un software que entiende cómo trabajan realmente los coaches de CrossFit.',
+    'testimonial-2-name': 'Sarah Thompson',
+    'testimonial-2-role': 'Dueña, CrossFit Elite',
+    'testimonial-3-quote': 'El feedback loop con los atletas es un game-changer para el coaching remoto.',
+    'testimonial-3-name': 'Juan Martinez',
+    'testimonial-3-role': 'Director de Programación, CrossFit Buenos Aires',
+
+    // FAQ
+    'faq-1-question': '¿Puedo usar RUDO tanto para grupos como para clientes 1-a-1?',
+    'faq-1-answer': 'Sí — asigna programas a individuos, grupos pequeños o todo tu roster con un solo clic.',
+    'faq-2-question': '¿Mis atletas necesitan descargar algo?',
+    'faq-2-answer': 'No. Obtienen acceso instantáneo a través de una web app optimizada para móviles — sin instalaciones, sin fricción.',
+    'faq-3-question': '¿Qué hace diferente a RUDO de otras plataformas de coaching?',
+    'faq-3-answer': 'RUDO está construido específicamente para coaches de CrossFit y HYROX — no para entrenadores genéricos. Cada característica está diseñada alrededor de la programación del mundo real, feedback y flujo de atletas en entornos de entrenamiento funcional de alto rendimiento.',
+    'faq-4-question': '¿Puedo personalizar mis propios bloques de programación?',
+    'faq-4-answer': 'Sí. Construye, reutiliza y edita tus propias plantillas — calentamientos, EMOMs, habilidades — y despliégalos en segundos.',
+    'faq-5-question': '¿Qué incluye la beta?',
+    'faq-5-answer': 'Acceso completo a todas las funciones principales, acceso directo al equipo fundador y beneficios de por vida por ayudarnos a dar forma al futuro de RUDO.',
+
+    // Beta Form
+    'join-beta-title': 'Únete a la Beta de RUDO',
+    'join-beta-subtitle': 'Sé de los primeros en experimentar el futuro del coaching en CrossFit',
+    'full-name': 'Nombre completo',
+    'box-name': 'Nombre del box (opcional)',
+    'reserve-access': 'RESERVA TU ACCESO',
+    'thanks-register': '¡Gracias por registrarte!',
+    'contact-soon': 'Te contactaremos pronto con más información.',
+    'email-registered': 'Este email ya está registrado en la lista de espera',
+    'error-occurred': 'Hubo un error al procesar tu registro. Por favor intenta de nuevo.',
+
+    // Comparison Section
+    'spreadsheet-problem': 'Docenas de pestañas. Sin estructura.',
+    'spreadsheet-solution': 'Arrastra y suelta semanas completas en minutos.',
+    'spreadsheet-problem-subtext': '¿Dónde está el WOD del martes?',
+    'spreadsheet-solution-subtext': 'Un calendario limpio. Control total.',
+    
+    'copy-paste-problem': 'Copiar y pegar para cada atleta.',
+    'copy-paste-solution': 'Asigna a grupos con un clic.',
+    'copy-paste-problem-subtext': 'Actualizaciones manuales = tiempo perdido',
+    'copy-paste-solution-subtext': 'Acciones en masa, actualizaciones instantáneas',
+    
+    'feedback-problem': 'Feedback perdido en DMs.',
+    'feedback-solution': 'Comentarios organizados y rastreados.',
+    'feedback-problem-subtext': 'Disperso en apps y chats',
+    'feedback-solution-subtext': 'Todo el feedback en un solo lugar',
+    
+    'branding-problem': 'Parece amateur.',
+    'branding-solution': 'Plataforma profesional con tu marca.',
+    'branding-problem-subtext': 'Hojas de cálculo y docs genéricos',
+    'branding-solution-subtext': 'Experiencia profesional personalizada',
+
+    // Coach Features
+    'coach-features-title': 'Para Coaches',
+    'save-time': 'Ahorra horas en programación y admin',
+    'manage-groups': 'Gestiona múltiples grupos eficientemente',
+    'look-pro': 'Luce profesional con apps personalizadas',
+
+    // Athlete Features
+    'athlete-features-title': 'Para Atletas',
+    'access-workouts': 'Accede a los entrenamientos donde sea, cuando sea',
+    'instant-feedback': 'Da y recibe feedback instantáneamente',
+    'track-progress': 'Sigue tu progreso con análisis detallados'
   }
 };
